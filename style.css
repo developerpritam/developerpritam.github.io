@@ -1,0 +1,669 @@
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+font-family: 'Overpass', sans-serif;
+}
+
+
+
+/* /////////////// loading animation //////////////// */
+
+#loading{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff url('images/Infinity-1s-200px.gif') no-repeat center;
+    z-index: 99999;
+    
+}
+/* /////////////// loading animation //////////////// */
+
+
+    .navbar{
+    width: 100%;
+    position: fixed !important;
+    /* background-color: tan !important; */
+    z-index: 999;
+  
+}
+
+
+.nav-background{
+    background: black;
+
+}
+
+.navbar-toggler{
+    outline: none !important;
+}
+
+
+
+/*////////////////// navbar hover effect ///////////////////////*/
+.nav-item .nav-link{
+    position: relative;
+    /* background-color: #1CB5E0; */
+}
+
+    .nav-link:before{
+        content: "";
+        position: absolute;
+        top: 75%;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: #fff;
+        transition: all 0.4s linear;
+    }
+
+
+    .nav-link:after{
+        content: "";
+        position: absolute;
+        top: 10%;
+        right: 0;
+        width: 0;
+        height: 3px;
+        background: #fff;
+        transition: all 0.4s linear;
+    }
+
+
+    .nav-link:hover:before{
+        width: 100%;
+        background: #1CB5E0;
+    }
+
+    
+    .nav-link:hover:after{
+        width: 100%;
+        background: #1CB5E0;
+    }
+ 
+ /*////////////////// navbar hover effect ///////////////////////*/
+
+
+
+
+/* ////////////////////// header middle position end ////////////////////////// */
+
+
+header{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(125deg, #231557, #44107A, #FF1361,#fda34b, #FFF800);
+    background-size: 400%;
+    animation: bganimation 15s infinite;
+}
+
+
+
+/* ///// background header color animation////// */
+
+@keyframes bganimation {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%; 
+    }
+    100%{
+        background-position: 0% 50%; 
+    }
+}
+
+/* ///// background header color animation////// */
+
+
+
+/* /////// castom logo ///////// */
+.site-logo {
+    width: 60px;
+    height: 60px;
+    display: block;
+    overflow: visible;
+    border: 6px solid #1CB5E0 ;
+    position: relative;
+    transform: rotate(0deg);
+    transition:/* transform*/ .4s ease-in-out;
+    flex-shrink: 0;
+    
+}
+
+a.logo-text{
+    color: #fff;
+    font-size: 20px;
+    
+    margin-bottom: 1.25em;
+    font-weight: 700;
+    
+}
+
+
+.site-logo:hover {
+    opacity: 1;
+    transform: rotate(-90deg);
+    transition: transform .4s ease-in-out;
+    box-shadow: 0 0 30px 5px lightgreen;
+}
+
+.site-logo:hover .logo-text {
+    transform: translate(-50%,-50%) rotate(90deg);
+    transform-origin: center;
+}
+
+.site-logo .logo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(0deg);
+    transition: transform .4s ease-in-out;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* /////// castom logo ///////// */
+
+.navbar{
+   /* background: grey; */
+  
+   
+}
+
+
+.animated-icon1{
+    color: #fff !important;
+    /* background-color: red; */
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar-collapse{
+        background: black;
+      
+        z-index: 1;
+        text-align: center;
+        
+    }
+    
+  }
+
+
+
+
+.nav-menu:hover{
+    border: 1px solid #fff;
+}
+
+.nav-item{
+    margin:8px;
+}
+.middle-header{
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background: yellow; */
+    color: #fff;
+    
+}
+
+.middle-header span{
+    font-size: 20px;
+}
+
+.middle-header p{
+    font-size: 17px;
+}
+
+
+/* animate.css /////////////////////////*/
+
+
+/* animate.css /////////////////////////*/
+
+
+.btn-middle-header{
+    border: 2px solid #fff;
+    padding: 15px 45px;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.7s ease;
+    border-radius: 30px;
+    
+
+}
+
+
+.btn-middle-header:hover{
+    color: #000 !important;
+    background: #fff;
+}
+
+
+@media (max-width: 576px){
+
+    .middle-header{
+    
+    }
+
+    span{
+        font-size: 20px;
+    }
+
+    h1{
+        font-size: 30px;
+    }
+
+}
+
+
+/* //////////////// mouse scrolling effect //////////////////// */
+
+.mouse{
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.mouse-scroll{
+    width: 30px;
+    height: 45px;
+    border: 2px solid #fff;
+    border-radius: 60px;
+}
+
+.mouse::before{
+    content: "";
+    width: 3px;
+    height: 7px;
+    position: absolute;
+    top: 8px;
+    background: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    opacity: 1;
+    animation: mouse 2s infinite;
+
+}
+
+@keyframes mouse{
+    form{
+        opacity: 1;
+        top: 30px;
+
+    }
+    to{
+        opacity: 0;
+        top: 40px;
+    }
+}
+
+/* //////////////// mouse scrolling effect //////////////////// */
+
+
+
+/* ////////////////////// header middle position end ////////////////////////// */
+
+
+/* //////////////////////progress bar end ////////////////////////// */
+
+.progress{
+    height: 12px !important;
+    margin: 10px;
+    
+}
+
+.progressbar-text{
+    color: #1D2124;
+    margin-top: 10px !important;
+}
+.progress-bar{
+    background: linear-gradient(to left, #000046, #1CB5E0 ); 
+   
+}
+
+
+
+
+
+
+/* ////////////////////// progress bar end ////////////////////////// */
+
+
+
+
+
+
+
+/* scroll animation start */
+.ani-skill, .animate-about, .animate-card-1, .animate-card-2, .animate-card-3, .contact-section, .footer-top, .footer-company, .footer-contact-section{
+    opacity: 0;
+}
+
+.ani-skill.animated, .animate-about.animated, .animate-card-1.animated, .animate-card-1.animated, .animate-card-1.animated, .contact-section.animated, .footer-top.animated, .footer-company.animated, .footer-contact-section.animated{
+    opacity: 1;
+}
+
+
+
+/* scroll animation start */
+
+
+
+/*/////////////////////// start what i can do //////////////////////*/
+
+/* .container{
+
+
+} */
+
+.card{
+ padding: 30px;
+ /* margin: px; */
+ transition: all 0.6s ease;
+ 
+}
+
+.card .fas{
+    font-size: 38px;
+    margin: 20px;
+    background-color: red;
+    
+}
+
+.card:hover{
+    transform: translateY(-15%);
+}
+
+.what-i-can-do{
+    margin-top: 80px;
+}
+
+.services{
+margin-bottom: 70px;
+}
+
+
+
+
+
+/*//////////////////////// end what i can do ///////////////////////*/
+
+
+/* ////////////// Contact me start ///////////////// */
+
+.contact-section{
+   
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,50)),url('images/computer-1185569_1280.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+    width: 100%;
+    height: 80vh;
+    transition: box-shadow .5s;
+}
+
+.contact-section:hover{
+    box-shadow: 0 0 20px 10px grey;
+}
+
+article{
+    padding: 200px 0 230px 0;
+ 
+}
+
+
+/* //////////////////// popup form massage area /////////////////////// */
+/* input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+} */
+                                                  
+/* //////////////////// popup form massage area /////////////////////// */
+
+.contact-section h5{
+    margin-bottom: 20px;
+   
+}
+
+
+.contact-section .contact-now {
+    border: 2px solid #fff;
+    padding: 15px 45px;
+    border-radius: 25px;
+    transition: 0.4s;
+   
+    
+}
+
+.contact-now:hover{
+    color: #000 !important;
+    background: #fff;
+}
+
+/* ////////////// Contact me end ///////////////// */
+
+
+
+/*//////////////////////// start portfolio section ///////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.box{
+    /* border: 2px solid #000; */
+    /* width: 100%; */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease;
+}
+
+.box:hover{
+    box-shadow: 0 0 15px 2px gray;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.content{
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all .7s ease !important;
+   }
+
+
+.button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1.5px solid #fff;
+    padding: 5px 16px;
+   transition: all 0.4s;
+}
+
+.button:hover{
+    box-shadow: 0 0 20px #fff;
+    
+}
+
+.box:hover .content{
+    left: 0;
+}
+
+
+
+
+
+
+
+/*//////////////////////// end portfolio section ///////////////////////*/
+
+
+/* slider */
+.slider{
+    margin: 80px 0 80px 0;
+
+}
+
+/* slider */
+
+
+/*/////////////////// footer-top /////////// */
+
+.footer-top{
+    background: #000046;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #1CB5E0,#000046 );  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #1CB5E0, #000046 ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7*/
+
+
+}
+
+.footer-top-text{
+    color: #fff;
+    font-size: 17px;
+}
+
+
+
+/*/////////////////// footer-top /////////// */
+
+.page-footer .fab {
+    color: #fff;
+     font-size: 18px;
+     transition: all 0.4s;
+    margin: 15px;
+    
+}
+
+.page-footer .fab:hover{
+    /* transform: translateY(-20%); */
+  transform: scale(2);
+  cursor: pointer;
+}
+
+
+
+.gal {
+	
+	
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+	  
+	
+	}	
+	.gal img{ width: 100%; padding: 7px 0;}
+@media (max-width: 500px) {
+		
+		.gal {
+	
+	
+	-webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+	  
+	
+	}
+		
+}
+
+
+
+.footer-contact-section .fas{
+   transition: transform 0.5s ease;
+}
+
+.footer-contact-section .fas:hover{
+    transform: rotate(360deg);
+ }
+
+/* ********* footer copyright ********** */
+.footer-copyright{
+
+    width: 100% !important;
+    background: #1D2124;
+    color: #fff;
+   
+}
+
+.footer-copyright a{
+    line-height: 1.5;
+    text-decoration: none !important;
+    text-shadow: 0 0 10px 10px red;
+}
+
+.footer-copyright p{
+    margin: 0;
+    font-weight: 600;
+  animation-name: copyright;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+    
+}
+
+@keyframes copyright{
+    0%
+    {transform: rotateY(0deg);}
+
+    100%
+    {transform: rotateY(360deg);}
+}
+
+
+
+
+    
+
+/* ********* footer copyright ********** */
+
+
+
+    /* ////////////////////// website dark mode using media quary /////////////////////// */
+
+ 
+
+    /* ////////////////////// website dark mode using media quary /////////////////////// */
+
+    /* //////////// dark mode //////////// */
+   
+
+
+     /* //////////// dark mode //////////// */
+
+   
