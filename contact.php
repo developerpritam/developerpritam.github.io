@@ -1,31 +1,22 @@
 <?php
-// $name = $_POST['name'];
-// $visitor_email = $_POST['email'];
-// $message_$_POST['message'];
+$name = $_POST['username'];
+$visitor_email = $_POST['email'];
+$message_$_POST['message'];
 
-// $email_from = 'pritambag426@gmail.com';
+// check input fields  
 
-// $email_subject = 'hii my name is pritam bag';
+if (empty($name) || empty($email) || empty($message))
 
-// $email_body = "User Name: $name.\n".
-
-//                 "User email: $visitor_email.\n".
-
-//                     "User Message: $message.\n".
-
-//       $to = "pritambag321"    
-
-
-$to = "pritambag426@gmail.com";
-$subject = "response from website";
-$message = "hi i am a pritam bag";
-$headers = "From: pritambag321@gmail.com";
-
-
-if(mail ($to, $subject, $message, $headers)){
-    echo "mail send successfully";
-    else{
-        echo "can not send mail";
-    }
+{
+    echo "please fill all the fields";
 }
+else
+{
+    mail("pritambag426@gmail.com", "pritam message", $message , "from: $name < $email>");
+
+
+    echo "<script type='text/javascript'>alert('your message send successfully')</script>";
+}
+
 ?>
+
