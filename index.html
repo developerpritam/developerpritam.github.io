@@ -334,6 +334,9 @@
         <h4 class="modal-title">Contact form</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button> 
       </div>
+
+
+
         <!-- php code start -->
        
 
@@ -346,7 +349,7 @@
         <form action="contact.php">
           <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" name="username" class="form-control" placeholder="Enter Name" id="Name" autocomplete="off">
+            <input type="text" name="name" class="form-control" placeholder="Enter Name" id="Name" autocomplete="off">
           </div>
           <div class="form-group">
             <label for="email">Email address:</label>
@@ -355,7 +358,7 @@
 
           <div class="form-group">
             <label for="message">Message:</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px" class="form-control"></textarea>
+            <textarea id="subject" name="message" placeholder="Write something.." style="height:100px" class="form-control"></textarea>
         </div>
           
 
@@ -567,6 +570,238 @@
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+      </div> -->
+
+<!--//////////////////////////////// slider section end ////////////////////////////////-->
+
+
+          <!-- footer section start //////////////////////////////// -->
+
+          <!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+  <div class="footer-top mt-5">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="footer-top-text mb-0">Get connected with us on social networks!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram white-text"> </i>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="footer-company col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">Company name</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+          consectetur
+          adipisicing elit.</p>
+
+      </div>
+      <!-- Grid column -->
+
+    
+      
+
+
+      <!-- Grid column -->
+      <div class=" footer-contact-section col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i>Budge budge, Kolkata, INDIA</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i>pritambag426@gmail.com</p>
+        <p>
+          <i class="fas fa-phone mr-3"></i>+91 9073819208</p>
+       
+
+      </div>
+      <!-- Grid column -->
+
+
+  </div>
+  <!-- Footer Links -->
+</div>
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright: 
+    <a href="https://developerpritam.github.io"><p>Developer Pritam</p></a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+<!-- footer section end /////////////////////////////////////////////////////////////////////////////////////////// -->       
+            
+
+
+  <!-- animated navaar js          -->
+  <script>
+  $(document).ready(function () {
+
+    $('.first-button').on('click', function () {
+  
+      $('.animated-icon1').toggleClass('open');
+    });
+    
+   
+  });
+
+</script>
+
+<script>
+
+var preloader = document.getElementById("loading");
+function myloadingfunction(){
+ preloader.style.display = 'none';
+
+}
+
+</script>
+<!-- scrolling animation -->
+
+
+<script>
+$("document").ready(function(){
+$(".ani-skill").waypoint(function(direction){
+  $(".ani-skill").addClass("animated zoomIn")
+},{
+  offset: '50%' // othoba 50% likleo hobe  ///////////////
+});
+
+
+$(".animate-about").waypoint(function(direction){
+  $(".animate-about").addClass("animated fadeInUp")
+},{
+  offset: '50%' // othoba 50% likleo hobe  ///////////////
+})
+
+
+$(".animate-card-1").waypoint(function(direction){
+  $(".animate-card-1").addClass("animated rotateInDownLeft")
+},{
+  offset: '400px' // othoba 50% likleo hobe  ///////////////
+})
+
+
+
+$(".animate-card-2").waypoint(function(direction){
+  $(".animate-card-2").addClass("animated fadeInUp")
+},{
+  offset: '400px' // othoba 50% likleo hobe  ///////////////
+})
+
+
+
+$(".animate-card-3").waypoint(function(direction){
+  $(".animate-card-3").addClass("animated rotateInDownRight")
+},{
+  offset: '400px' // othoba 50% likleo hobe  ///////////////
+})
+
+
+$(".contact-section").waypoint(function(direction){
+  $(".contact-section").addClass("animated zoomIn")
+},{
+  offset: '400px' // othoba 50% likleo hobe  ///////////////
+})
+
+
+$(".footer-top").waypoint(function(direction){
+  $(".footer-top").addClass("animated jackInTheBox")
+},{
+  offset: '400px' // othoba 50% likleo hobe  ///////////////
+})
+
+
+$(".footer-company").waypoint(function(direction){
+  $(".footer-company").addClass("animated bounceInLeft")
+},{
+  offset: '400px' // othoba 50% likleo hobe  ///////////////
+})
+
+
+$(".footer-contact-section").waypoint(function(direction){
+  $(".footer-contact-section").addClass("animated bounceInRight")
+},{
+  offset: '400px' // othoba 50% likleo hobe  ///////////////
+})
+});
+
+</script>
+
+
+<!-- scrolling animation -->
+
+   <!-- animated navaar js          -->
+
+
+
+   <!-- animated skill bar -->
+
+
+  <!-- animated skill bar -->
+
+
+
+
+</body>
+</html>carouselExampleCaptions" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
