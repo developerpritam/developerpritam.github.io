@@ -25,11 +25,93 @@ font-family: 'Overpass', sans-serif;
 /* /////////////// loading animation //////////////// */
 
 
+/* /////////////// amimated nav toggle button //////////////// */
+
+.animated-icon1, .animated-icon2, .animated-icon3 {
+    width: 30px;
+    height: 24px;
+    position: relative;
+    margin: 0px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    }
+    
+    .animated-icon1 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    }
+    
+    .animated-icon1 span {
+    background: #fff;
+    }
+   
+    .animated-icon1 span:nth-child(1) {
+    top: 0px;
+    }
+    
+    .animated-icon1 span:nth-child(2) {
+    top: 10px;
+    }
+    
+    .animated-icon1 span:nth-child(3) {
+    top: 20px;
+    }
+    
+    .animated-icon1.open span:nth-child(1) {
+    top: 11px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    }
+    
+    .animated-icon1.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+    }
+    
+    .animated-icon1.open span:nth-child(3) {
+    top: 11px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    }
+    
+    /* Icon 3*/
+
+/* /////////////// amimated nav toggle button //////////////// */
+
+
+
+
+
+
     .navbar{
     width: 100%;
-    position: fixed !important;
-    /* background-color: tan !important; */
-    z-index: 999;
+    /* position: fixed !important; */
+   
+    /* z-index: 999; */
   
 }
 
@@ -57,7 +139,7 @@ font-family: 'Overpass', sans-serif;
         top: 75%;
         left: 0;
         width: 0;
-        height: 3px;
+        height: 2px;
         background: #fff;
         transition: all 0.4s linear;
     }
@@ -69,7 +151,7 @@ font-family: 'Overpass', sans-serif;
         top: 10%;
         right: 0;
         width: 0;
-        height: 3px;
+        height: 2px;
         background: #fff;
         transition: all 0.4s linear;
     }
@@ -77,13 +159,13 @@ font-family: 'Overpass', sans-serif;
 
     .nav-link:hover:before{
         width: 100%;
-        background: #1CB5E0;
+        background: #fff;
     }
 
     
     .nav-link:hover:after{
         width: 100%;
-        background: #1CB5E0;
+        background: #fff;
     }
  
  /*////////////////// navbar hover effect ///////////////////////*/
@@ -100,6 +182,7 @@ header{
     background-image: linear-gradient(125deg, #231557, #44107A, #FF1361,#fda34b, #FFF800);
     background-size: 400%;
     animation: bganimation 15s infinite;
+    /* clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0 80%, 0 0); */
 }
 
 
@@ -123,12 +206,17 @@ header{
 
 
 /* /////// castom logo ///////// */
+
+.navbar-brand{
+    margin-left: 70px;
+}
+
 .site-logo {
     width: 60px;
     height: 60px;
     display: block;
     overflow: visible;
-    border: 6px solid #1CB5E0 ;
+    border: 6px solid orange;
     position: relative;
     transform: rotate(0deg);
     transition:/* transform*/ .4s ease-in-out;
@@ -150,7 +238,7 @@ a.logo-text{
     opacity: 1;
     transform: rotate(-90deg);
     transition: transform .4s ease-in-out;
-    box-shadow: 0 0 30px 5px lightgreen;
+    box-shadow: 0 0 30px 5px red;
 }
 
 .site-logo:hover .logo-text {
@@ -172,9 +260,40 @@ a.logo-text{
 
 .navbar{
    /* background: grey; */
-  
+ 
    
 }
+
+
+/* ////////////////// stiky animated navbar ////////////////*/
+
+#menuarea{
+     display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    /* display: flex; */
+    position: fixed;
+    transition: background 0.5s;
+    z-index: 999;
+    width: 100%;
+
+}
+
+
+#menuarea.cus-nav{
+    background: #231557;
+    z-index: 999;
+}
+
+#menuarea.cus-nav a{
+    color: #fff;
+}
+
+
+
+
+
 
 
 .animated-icon1{
@@ -244,6 +363,9 @@ a.logo-text{
 .btn-middle-header:hover{
     color: #000 !important;
     background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    cursor: pointer;
+    text-decoration: none;
 }
 
 
@@ -317,6 +439,10 @@ a.logo-text{
 
 /* //////////////////////progress bar end ////////////////////////// */
 
+.my-skill{
+    margin-top: 100px;
+}
+
 .progress{
     height: 12px !important;
     margin: 10px;
@@ -328,7 +454,7 @@ a.logo-text{
     margin-top: 10px !important;
 }
 .progress-bar{
-    background: linear-gradient(to left, #000046, #1CB5E0 ); 
+    background: linear-gradient(to left,  #231557, #44107A, #FF1361,#fda34b ); 
    
 }
 
@@ -367,31 +493,43 @@ a.logo-text{
 
 } */
 
-.card{
- padding: 30px;
- /* margin: px; */
- transition: all 0.6s ease;
- 
-}
-
-.card .fas{
-    font-size: 38px;
-    margin: 20px;
-    background-color: red;
-    
-}
-
-.card:hover{
-    transform: translateY(-15%);
-}
-
 .what-i-can-do{
-    margin-top: 80px;
+    margin-top: 100px;
 }
 
 .services{
-margin-bottom: 70px;
+margin-bottom: 120px;
 }
+
+
+
+.card{
+ padding: 30px;
+ transition: all 0.4s ease !important;
+ box-shadow: 0 0 15px 0 rgba(0,0,0,0.4) !important;
+ 
+}
+
+.card:hover{
+    background: #FF1361;
+    color: #fff;
+    border: none;
+}
+
+.card:hover .fas{
+    color: #fff;
+}
+
+
+
+.card .fas{
+    font-size: 40px;
+    margin: 20px;
+    color: #1D2124;
+    
+}
+
+
 
 
 
@@ -514,10 +652,14 @@ img{
     border: 1.5px solid #fff;
     padding: 5px 16px;
    transition: all 0.4s;
+   color: #fff;
+   text-decoration: none;
 }
 
 .button:hover{
     box-shadow: 0 0 20px #fff;
+    text-decoration: none;
+    color: #fff;
     
 }
 
@@ -552,6 +694,34 @@ img{
 
 
 }
+
+.bg-footer-amimation{
+
+    background-image: linear-gradient(125deg, #231557, #44107A, #FF1361,#fda34b, #FFF800);
+    background-size: 400%;
+    animation: footer-animate 15s infinite !important;
+    /* clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0 80%, 0 0); */
+}
+
+
+
+/* ///// background footer-top color animation////// */
+
+@keyframes footer-animate{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%; 
+    }
+    100%{
+        background-position: 0% 50%; 
+    }
+}
+
+/* ///// background footer-top color animation////// */
+
+
 
 .footer-top-text{
     color: #fff;
@@ -618,13 +788,41 @@ img{
     width: 100% !important;
     background: #1D2124;
     color: #fff;
-   
+    background-image: linear-gradient(125deg, #231557, #44107A, #FF1361, #fda34b, #FFF800);
+    background-size: 400%;
+    animation: footer-down 15s infinite;
+    /* clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0 80%, 0 0); */
 }
+
+
+
+/* ///// background footer-top color animation////// */
+
+@keyframes footer-down{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%; 
+    }
+    100%{
+        background-position: 0% 50%; 
+    }
+}
+
+/* ///// background footer-top color animation////// */
+
+
+
+
+
+   
 
 .footer-copyright a{
     line-height: 1.5;
     text-decoration: none !important;
-    text-shadow: 0 0 10px 10px red;
+    /* text-shadow: 0 0 10px 10px red; */
+    color: #fff !important;
 }
 
 .footer-copyright p{
@@ -645,12 +843,12 @@ img{
     {transform: rotateY(360deg);}
 }
 
-
+/* ********* footer copyright ********** */
 
 
     
 
-/* ********* footer copyright ********** */
+
 
 
 
