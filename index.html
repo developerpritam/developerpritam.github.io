@@ -1,479 +1,856 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Developer Pritam</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="fontcss/all.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-    
-     <script src="javascript.js"></script>
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+font-family: 'Overpass', sans-serif;
+}
+
+/* /////////////// loading animation //////////////// */
+#loading{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff url('images/Infinity-1s-200px.gif') no-repeat center;
+    z-index: 99999;
+    }
+/* /////////////// loading animation //////////////// */
+
+
+/* /////////////// amimated nav toggle button //////////////// */
+
+.animated-icon1, .animated-icon2, .animated-icon3 {
+width: 30px;
+height: 24px;
+position: relative;
+margin: 0px;
+-webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-o-transform: rotate(0deg);
+transform: rotate(0deg);
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+cursor: pointer;
+}
+
+.animated-icon1 span {
+display: block;
+position: absolute;
+height: 3px;
+width: 100%;
+border-radius: 9px;
+opacity: 1;
+left: 0;
+-webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-o-transform: rotate(0deg);
+transform: rotate(0deg);
+-webkit-transition: .25s ease-in-out;
+-moz-transition: .25s ease-in-out;
+-o-transition: .25s ease-in-out;
+transition: .25s ease-in-out;
+}
+
+.animated-icon1 span {
+background: #fff;
+}
+
+.animated-icon1 span:nth-child(1) {
+top: 0px;
+}
+
+.animated-icon1 span:nth-child(2) {
+top: 10px;
+}
+
+.animated-icon1 span:nth-child(3) {
+top: 20px;
+}
+
+.animated-icon1.open span:nth-child(1) {
+top: 11px;
+-webkit-transform: rotate(135deg);
+-moz-transform: rotate(135deg);
+-o-transform: rotate(135deg);
+transform: rotate(135deg);
+}
+
+.animated-icon1.open span:nth-child(2) {
+opacity: 0;
+left: -60px;
+}
+
+.animated-icon1.open span:nth-child(3) {
+top: 11px;
+-webkit-transform: rotate(-135deg);
+-moz-transform: rotate(-135deg);
+-o-transform: rotate(-135deg);
+transform: rotate(-135deg);
+}
+
+/* Icon 3*/
+
+/* /////////////// amimated nav toggle button //////////////// */
+
+
+
+  .navbar-toggler{
+    outline: none !important;
+    border: none !important;
+}
+
+/*////////////////// navbar hover effect ///////////////////////*/
+.nav-item .nav-link{
+    position: relative;
+    /* background-color: #1CB5E0; */
+}
+
+.nav-link:before{
+    content: "";
+    position: absolute;
+    top: 75%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: all 0.4s linear;
+}
+
+
+.nav-link:after{
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: all 0.4s linear;
+}
+
+
+.nav-link:hover:before{
+    width: 100%;
+    background: #fff;
+}
+
+
+.nav-link:hover:after{
+    width: 100%;
+    background: #fff;
+}
+
+
+@media (max-width: 991px){
+.navbar-nav{
+    padding: 15px;
    
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">  this is animate.css ///////////////////////////////////////////////// -->
+}
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link href="https://fonts.googleapis.com/css?family=Overpass|PT+Sans&display=swap" rel="stylesheet">
+.navbar-nav .nav-item{
+   margin: 20px !important;
+    }
+}
 
- <!-- ///////// aos scroll effect ///////// -->
- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
- <!-- ///////// aos scroll effect ///////// -->
+ /*////////////////// navbar hover effect ///////////////////////*/
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-  <!-- scrolling animation -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script> -->
-<!-- scrolling animation -->
+/* ////////////////////// header middle position end ////////////////////////// */
+header{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(125deg, #231557, #44107A, #FF1361,#fda34b, #FFF800);
+    background-size: 400%;
+    animation: bganimation 15s infinite;
+    /* clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0 80%, 0 0); */
+}
 
-</head>
-<body onload="myloadingfunction()">
-<div id="loading">
-</div>
+/* ///// background header color animation////// */
 
- <!-- /////////////////////start navber ////////////////////////////// -->
-  <header>
-<!--Navbar-->
- <nav class="navbar navbar-expand-lg navbar-dark mb-4" id="menuarea">
-  <div class="container-fluid text-uppercase">
-  <!-- Navbar brand -->
- 
-<!-- castom logo -->
-  <a class="navbar-brand site-logo" href="#"><span class="logo-text text-center text-white">Developer Pritam</span></a>
-<!-- castom logo -->
+@keyframes bganimation {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%; 
+    }
+    100%{
+        background-position: 0% 50%; 
+    }
+}
 
-<!-- Collapse button -->
-  <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
-    aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
-    <div class="animated-icon1"><span></span><span></span><span></span></div>
-  </button>
+/* ///// background header color animation////// */
 
-  <!-- Collapsible content -->
-  <div class="collapse navbar-collapse" id="navbarSupportedContent20">
 
-    <!-- Links -->
-    <ul class="navbar-nav ml-auto font-weight-bold">
-      <li class="mr-5 nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item mr-5">
-        <a class="nav-link" href="#services-smooth-scroll">Services</a>
-      </li>
-      <li class="nav-item mr-5">
-        <a class="nav-link" href="#portfolio-smooth-scroll">Portfolio</a>
-      </li>
+/* /////// castom logo ///////// */
+.navbar-brand{
+    margin-left: 70px;
+}
 
-      <li class="nav-item mr-5">
-        <a class="nav-link" href="#contact-smooth-scroll">Contact</a>
-      </li>
-    </ul>
-    <!-- Links -->
- </div>
-</div>
-  <!-- Collapsible content -->
-
-</nav>
-
-<!--/Navbar-->
-
-<!-- ///////////////////// end navber ////////////////////////////// -->
-
-<!--/////////////////////////// header middle position start ////////////////////////// -->
-  <div class="middle-header container text-center">
-  <span>hey there!</span>
-
-   <h1 class="animated infinite pulse delay-1s">I am a Front end web developer</h1>
-  <p class="mb-5">I design all kinds of websites according to new trends</p>
-  <a class="btn-middle-header" href="#contact-smooth-scroll">HIRE ME</a>
-  <a class="btn-middle-header" href="#about-smooth-scroll">ABOUT ME</a>
-  </div>
-<!--/////////////////////////// header middle position start ////////////////////////// -->
-
-<!--  mouse scrolling effect -->
-<div class="mouse">
-<div class="mouse-scroll">
-
-</div>
-</div>
-<!--  mouse scrolling effect -->
-</header>
-
-<!-- /////////// bootstrap progress bar /////////// -->
-  
-<!-- /////////// bootstrap progress bar /////////// -->
-
-  <section>
-    <h1 class="text-center my-skill text-uppercase" data-aos="fade-down">My Skills</h1>
-      <hr class="w-25 mx-auto pt-5">
-  <div class="container-fluid">
-    <div class="row ">
-
-  <div class="col-lg-6 col-md-12 col-12" data-aos="fade-right">
-  
-    <!-- *********** skill code write here ************** -->
-      <span class="progressbar-text">Html</span>
-      <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: 84%;" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">84%</div>
-    </div>
-
-    <span class="progressbar-text">Css</span>
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-    </div>
-
-    <span class="progressbar-text">Javascript</span>
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
-    </div>
-
-    <span class="progressbar-text">Jquery</span>
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: 66%;" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">66%</div>
-    </div>
-
-    <span class="progressbar-text">Bootstrap</span>
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: 76%;" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100">76%</div>
-    </div>
+.site-logo {
+    width: 60px;
+    height: 60px;
+    display: block;
+    overflow: visible;
+    border: 6px solid orange;
+    position: relative;
+    transform: rotate(0deg);
+    transition:/* transform*/ .4s ease-in-out;
+    flex-shrink: 0;
     
-  </div>
+}
 
-<!-- about me ////////////////////-->
-
-      <div class="col-lg-6 col-md-12 col-12" data-aos="fade-up">
-        <h3 class="text-center text-uppercase pt-5">About me</h3>
-      <hr class="w-25 mx-auto"> 
-       
-        <p class="about-me-content">Hi, my name is Pritam Bag <!--I have been completed an advanced diploma in information technology(IT) and now--> i am a front end web developer from India. I have a serious passion for web design. I can create different types of websites with my creativity and create custom landing pages with completely clean code. And I work with different web effects and web animations.<br><br><span>thank you!</span>                      
-      </div>
-    </div>
-      </div>
-  </section>
-<!-- about me ////////////////////-->
-
-
-<!-- /////////////////start what i can do /////////////////// -->
+a.logo-text{
+    color: #fff;
+    font-size: 20px;
     
-<div class="container text-center services" id="services-smooth-scroll">
-  <h3 class="what-i-can-do pt-5 pb-2" data-aos="fade-right">What i can do</h3>
-  <hr class="w-25 mx-auto pt-5">
-    <div class="row">
-      <div class="card-deck">
-      <div class="card col-lg-4 col-md-4 col-sm-4 col-12" data-aos="fade-up">
-        <i class="fas fa-laptop-code"></i>
-        <h3>Front end web development</h3>
-        <p>The front end development will be more attractive on the webpage using a variety of web effects and web animations so that they can catch the visitor's attention when visiting a website.</p>
-      </div>
+    margin-bottom: 1.25em;
+    font-weight: 700;
+    
+}
 
-      <div class="card col-lg-4 col-md-4 col-sm-4 col-12" data-aos="flip-left">
+.site-logo:hover {
+    opacity: 1;
+    transform: rotate(-90deg);
+    transition: transform .4s ease-in-out;
+    box-shadow: 0 0 30px 5px red;
+}
 
-        <i class="fas fa-laptop"></i>
-        <h3>Responsive design</h3>
-        <p>Responsive design that will work well in almost all browsers and screens, mobiles, tabs, PCs and any other devices</p>
+.site-logo:hover .logo-text {
+    transform: translate(-50%,-50%) rotate(90deg);
+    transform-origin: center;
+}
+
+.site-logo .logo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(0deg);
+    transition: transform .4s ease-in-out;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* /////// castom logo ///////// */
+
+
+/* navbar fit to for mobile screen */
+@media (max-width: 480px){
+    .navbar-brand{
+        margin-left: 53px;
+    }
+
+    .logo-text{
+        font-size: 16px !important;
+    }
+    
+    .site-logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .middle-header h1{
+       font-size: 30px;
+    }
+
+    .middle-header .btn-middle-header{
+        padding: 13px 35px;
+        font-weight: 600;
+     
+    }
+    }
+/* navbar fit to for mobile screen */
+
+
+/* ////////////////// stiky animated navbar ////////////////*/
+
+#menuarea{
+     display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    /* display: flex; */
+    position: fixed;
+    transition: background 0.5s;
+    z-index: 999;
+    width: 100%;
+
+}
+
+#menuarea.cus-nav{
+    background: #231557;
+    z-index: 999;
+}
+
+#menuarea.cus-nav a{
+    color: #fff;
+}
+
+.animated-icon1{
+    color: #fff !important;
+    /* background-color: red; */
+}
+
+.nav-item .nav-link{
+    font-size: 15px;
+}
+
+
+@media screen and (max-width: 992px) {
+    .navbar-collapse{
+        background: #231557;
+        z-index: 1;
+        text-align: center;
         
-      </div>
-
-      <div class="card col-lg-4 col-md-4 col-sm-4 col-12" data-aos="fade-down">
-        <i class="fas fa-file-code"></i>
-        <h3>Programming</h3>
-        <p>Web programming is done in many languages or frameworks. And core web programming is done to create any Heavy website or Fully functional website</p>
-      </div>
-      
-      
-    </div>
-    </div>
-  </div>
-
-    <!-- ///////////////// end what i can do /////////////////// -->
-
-    <!-- ////////////// contact section start ///////////////// -->
-
-  <section class="contact-section">
-    <article>
-      <div class="text-center text-white center-position">
-          <h5 class="mb-4">Contact me now if you have any work to do</h5>
-          <a href="#contact-smooth-scroll" class="contact-now text-white text-decoration-none">CONTACT NOW</a>
-
-            <!--this code will be a teg ( data-toggle="modal" data-target="#myModal" )  -->
-
-        </div>
-      </article>
-    </section>
-
-<!-- popup contact section The Modal -->
-<!-- <div class="modal fade" id="myModal">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content"> -->
+    }
     
-      <!-- Modal Header -->
-       <!-- <div class="modal-header">
-        <h4 class="modal-title">Contact form</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button> 
-      </div> -->
-
-<!-- php code start -->
-    
-<!-- php code end -->
-  
-<!-- Modal body -->
-  <!-- <div class="modal-body">
-    <form action="contact.php">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" name="name" class="form-control" placeholder="Enter Name" id="Name" autocomplete="off">
-      </div>
-      <div class="form-group">
-        <label for="email">Email address:</label>
-        <input type="email" name="email" class="form-control" placeholder="Enter Email id" id="email">
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea id="subject" name="message" placeholder="Write something.." style="height:100px" class="form-control"></textarea>
-    </div>
-      
- <div class="form-group form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="check"> Remember me
-        </label>
-      </div>
-      <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-    </form>
-  </div>
-    -->
-
-<!-- Modal footer -->
-<!-- <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-  </div>
-  
-</div>
-</div>
-
-</div>  -->
-             
-<!--popup contact section The Modal -->
-                
-<!-- ////////////// contact section end ///////////////// -->
-
-
-<!-- /////////////// start portfolio section //////////////// -->
-
-<!--///////////////// image gallery code start /////////////////-->
-<section id="portfolio-smooth-scroll" class="portfolio-margintop">
-  <div class="container">
-  <div class="col-md-12 text-center mb-5" data-aos="fade-right">
-        <h3>My portfolio</h3>
-        <hr class="w-25 mx-auto">
-        <p>These are the technologies that I know of the web projects I have created, these technologies are used in these projects</p>
-    </div>
-   <div class="row">
-<div class="gallery" id="gallery">
-
-<div class="mb-3 pics">
-  <img class="img-fluid img-width" src="images/card.jpg" alt="Card image cap">
-  <div class="content"><a class="button" href="https://developerpritam.github.io/pricing_card/">Live preview</a>
-  </div>
-</div>
-
-<div class="mb-3 pics">
-  <img class="img-fluid img-width" src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg" alt="Card image cap">
-  <div class="content"><a class="button" href="https://google.com">Live preview</a>
-  </div>
-</div>
-
-<div class="mb-3 pics">
-  <img class="img-fluid img-width" src="images/prhtographer.jpg" alt="Card image cap">
-  <div class="content"><a class="button" href="https://developerpritam.github.io/photographer_website/">Live preview</a>
-  </div>
-</div>
-
-<div class="mb-3 pics">
-  <img class="img-fluid img-width" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-  <div class="content"><a class="button" href="https://google.com">Live preview</a>
-  </div>
-</div>
-
-<div class="mb-3 pics">
-  <img class="img-fluid img-width" src="images/loginform.jpg" alt="Card image cap">
-  <div class="content"><a class="button" href="https://developerpritam.github.io/login_form/">Live preview</a>
-  </div>
-</div>
-
-<div class="mb-3 pics">
-  <img class="img-fluid img-width" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg" alt="Card image cap">
-  <div class="content"><a class="button" href="https://google.com">Live preview</a>
-  </div>
-</div>
-
-  </div>
-  </div>
-  </div>
-  
-  </section>
-  <!--///////////////// image gallery code end /////////////////-->
-    
-  <!-- ///////////////// end portfolio section /////////////////// -->
-
-
-<!--//////////////////////////////// slider section start ////////////////////////////////-->
-
-<!-- <div class="container slider">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://s3-ap-south-1.amazonaws.com/eww-wp/wp-content/uploads/2019/08/07133751/frontend-web-development.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="https://www.rishabhsoft.com/wp-content/uploads/2014/10/v1-benefits-of-front-end-development.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="https://i.udemycdn.com/course/750x422/2314744_c707.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-
-      </div> -->
-
-<!--//////////////////////////////// slider section end ////////////////////////////////-->
-
-<!-- footer section start //////////////////////////////// -->
-
-<footer class="page-footer font-small unique-color-dark">
-
-  <div class="bg-footer-amimation mt-5">
-    <div class="container">
-
-      <div class="row py-4 d-flex align-items-center">
-
-        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-          <h6 class="footer-top-text mb-0">Get connected with my social networks!</h6>
-        </div>
-      
-        <div class="col-md-6 col-lg-7 text-center text-md-right">
-
-          <!-- Facebook -->
-          <a href="https://www.facebook.com/pritam.bag.33671">
-          <i class="fab fa-facebook-f white-text mr-4"></i>
-          </a>
-          <!-- Twitter -->
-          <a href="https://twitter.com/Pritam24975568">
-            <i class="fab fa-twitter white-text mr-4"></i>
-          </a>
-          <!--Linkedin -->
-          <a href="https://www.linkedin.com/in/pritam-bag-8221a317a/">
-            <i class="fab fa-linkedin-in white-text mr-4"></i>
-          </a>
-          <!--Instagram-->
-          <a href="https://www.instagram.com/dev_pritam1/">
-            <i class="fab fa-instagram white-text mr-4"></i>
-          </a>
-
-        </div>
-
-      </div>
-  
-    </div>
-  </div>
-
-  <div class="container text-center text-md-left mt-5">
-
-    <div class="row mt-3">
-
-      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" id="contact-now-sec" data-aos="fade-down">
-
-        <h6 class="text-uppercase font-weight-bold">need any help</h6>
-        <hr class="deep-purple accent-2 mb-3 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>Get any help or if any web page design related work is done please contact me by email in the contact section to get my contact information.</p>
-      </div>
-
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 footer-contact-section" id="contact-smooth-scroll" data-aos="fade-up">
-
-        <h6 class="text-uppercase font-weight-bold">Contact</h6>
-        <hr class="deep-purple accent-2 mb-3 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <i class="fas fa-home mr-3"></i>Budge budge, Kolkata, INDIA</p>
-        <p>
-          <i class="fas fa-envelope mr-3"></i>pritambag426@gmail.com</p>
-        <p>
-          <i class="fas fa-phone mr-3"></i>+91 9073819208</p>
-       
-      </div>
-
-  </div>
-</div>
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright: 
-    <a href="https://developerpritam.github.io"><p>Developer Pritam</p></a>
-  </div>
-  <!-- Copyright -->
-</footer>
-
-<!-- footer section end /////////////////////////////////////////////////////////////////////////////////////////// -->       
-            
-<!--*************** animated toggler button js ************* -->
-<script>
-$(document).ready(function () {
-$('.first-button').on('click', function () {
-  $('.animated-icon1').toggleClass('open');
-    });
-    });
-</script>
-<!--*************** animated toggler button js ************* -->
-
-<!-- //////////// website loading animation///////////// -->
-<script>
-
-  var preloader = document.getElementById("loading");
-  function myloadingfunction(){
-   preloader.style.display = 'none';
   }
-  </script>
+
+
+.nav-menu:hover{
+    border: 1px solid #fff;
+}
+
+.nav-item{
+    margin:8px;
+}
+.middle-header{
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background: yellow; */
+    color: #fff;
+    
+}
+
+
+.middle-header h1{
+    animation-duration: 1.4s;
+}
+
+.middle-header span{
+    font-size: 20px;
+}
+
+.middle-header p{
+    font-size: 17px;
+}
+
+
+/* animate.css /////////////////////////*/
+
+/* animate.css /////////////////////////*/
+
+.btn-middle-header{
+    border: 2px solid #fff;
+    padding: 15px 45px;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.7s ease;
+    border-radius: 30px;
+    
+}
+
+.btn-middle-header:hover{
+    color: #000 !important;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* ////////////// header mouse scrolling effect /////////////// */
+
+.mouse{
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.mouse-scroll{
+    width: 30px;
+    height: 45px;
+    border: 2px solid #fff;
+    border-radius: 60px;
+}
+
+.mouse::before{
+    content: "";
+    width: 3px;
+    height: 7px;
+    position: absolute;
+    top: 8px;
+    background: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    opacity: 1;
+    animation: mouse 2s infinite;
+
+}
+
+@keyframes mouse{
+    form{
+        opacity: 1;
+        top: 30px;
+
+    }
+    to{
+        opacity: 0;
+        top: 40px;
+    }
+}
+
+/* //////////////// header mouse scrolling effect //////////////////// */
+
+
+
+/* ////////////////////// header middle position end ////////////////////////// */
+
+/* //////////////////////progress bar end ////////////////////////// */
+
+.my-skill{
+    margin-top: 100px;
+}
+
+.progress{
+    height: 12px !important;
+    margin: 10px;
+    
+}
+
+.progressbar-text{
+    color: #1D2124;
+    margin-top: 10px !important;
+}
+.progress-bar{
+    background: linear-gradient(to left,  #231557, #44107A, #FF1361,#fda34b ); 
+   
+}
+
+
+.about-me-content span{
+display: flex;
+justify-content: center;
+
+}
+
+
+/* ////////////////////// progress bar end ////////////////////////// */
+
+
+/*/////////////////////// start what i can do //////////////////////*/
+
+/* .container{
+
+
+} */
+
+.what-i-can-do{
+    margin-top: 100px;
+}
+
+.services{
+margin-bottom: 120px;
+}
+
+
+.card{
   
-  <!-- //////////// website loading animation///////////// -->
+ padding: 20px;
+ transition: all 0.5s;
+ box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+
+ }
+
+.card:hover{
+    background: #FF1361;
+    color: #fff;
+    border: none;
+}
+
+.card:hover .fas{
+    color: #fff;
+}
 
 
-<!-- ///////////// aos animation ////////////// -->
+.card .fas{
+    font-size: 50px;
+    margin: 30px;
+    color: #1D2124;
+    }
 
-  <!-- ///////// aos scroll effect js ///////// -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- ///////// aos scroll effect js ///////// -->
+@media (max-width: 576px){
+ 
+    .row .card-deck{
+        margin: 15px;
+    }
 
-<!-- ///////////// aos animation ////////////// -->
-<script>
-  AOS.init({
-    duration: 1500,
-    offset: 165
-  });
-</script>
-<!-- ///////////// aos animation ////////////// -->
-</body>
-</html>
+}
+   
+
+/*//////////////////////// end what i can do ///////////////////////*/
+
+
+/* ////////////// Contact me start ///////////////// */
+
+.contact-section{
+   
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.5)),url('images/computer-1185569_1280.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+   -moz-background-attachment: fixed;
+   -webkit-background-attachment: fixed;
+   -ms-background-attachment: fixed;
+   -o-background-attachment: fixed;
+    width: 100%;
+    height: 85vh;
+    transition: all 0.5s;
+}
+
+.contact-section:hover{
+    box-shadow: 0 0 25px 2px rgba(0,0,0,0.6);
+}
+
+
+
+.contact-section{
+    position: relative;
+   
+}
+
+.contact-section .center-position{
+    position: absolute;
+    /* background: red; */
+    background-size: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+/* //////////////////// popup form massage area /////////////////////// */
+/* input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+} */
+                                                  
+/* //////////////////// popup form massage area /////////////////////// */
+
+.contact-section h5{
+    margin-bottom: 20px;
+   
+}
+
+.contact-section .contact-now {
+    border: 2px solid #fff;
+    padding: 15px 42px;
+    border-radius: 25px;
+    transition: all 0.4s;
+   }
+
+.contact-now:hover{
+    color: #000 !important;
+    background: #fff;
+}
+
+@media (max-width: 592px){
+    .contact-section h5{
+        font-size: 18px;
+        display: inline-block;
+
+    }
+
+    .contact-section .contact-now {
+        border: 2px solid #fff;
+        padding: 13px 35px;
+        border-radius: 28px;
+       
+       }
+}
+
+/* ////////////// Contact me end ///////////////// */
+
+/*//////////////////////// start portfolio section ///////////////////////*/
+
+.portfolio-margintop{
+       margin-top: 85px;
+    }
+    
+    
+.gallery {
+-webkit-column-count: 3;
+-moz-column-count: 3;
+column-count: 3;
+-webkit-column-width: 33%;
+-moz-column-width: 33%;
+column-width: 33%; }
+
+
+@media (max-width: 768px) {
+.gallery {
+-webkit-column-count: 1;
+-moz-column-count: 1;
+column-count: 1;
+-webkit-column-width: 100%;
+-moz-column-width: 100%;
+column-width: 100%;
+}
+
+
+
+.gallery .img-width{
+    width: 100%;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    }
+}
+
+
+@media (max-width: 592px){
+    .gallery .pics{
+        
+        margin: 0 15px;
+    }
+    
+}
+
+ 
+.pics{
+
+/* width: 100%; */
+position: relative;
+overflow: hidden;
+cursor: pointer;
+transition: box-shadow 0.5s ease;
+}
+
+.pics:hover{
+    box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.content{
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all .7s ease !important;
+   }
+
+
+.button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1.5px solid #fff;
+    padding: 5px 16px;
+    border-radius: 2px;
+   transition: all 0.5s;
+   color: #fff;
+   text-decoration: none;
+}
+
+@media (max-width: 592px){
+
+    .button{
+        font-size: 13px;
+        padding: 5px 15px;
+        border: 1.3px solid #fff;
+    } 
+   
+}
+
+.button:hover{
+    box-shadow: 0 0 20px #fff;
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+.pics:hover .content{
+    left: 0;
+}
+
+/*//////////////////////// end portfolio section ///////////////////////*/
+
+
+/* slider */
+/* .slider{
+    margin: 80px 0 80px 0;
+
+} */
+
+/* slider */
+
+
+/*/////////////////// footer-top /////////// */
+
+.footer-top{
+    background: #000046;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #1CB5E0,#000046 );  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #1CB5E0, #000046 ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7*/
+
+
+}
+
+.bg-footer-amimation{
+
+    background-image: linear-gradient(125deg, #231557, #44107A, #FF1361,#fda34b, #FFF800);
+    background-size: 400%;
+    animation: footer-animate 15s infinite !important;
+    /* clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0 80%, 0 0); */
+}
+
+
+
+/* ///// background footer-top color animation////// */
+
+@keyframes footer-animate{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%; 
+    }
+    100%{
+        background-position: 0% 50%; 
+    }
+}
+
+/* ///// background footer-top color animation////// */
+
+.footer-top-text{
+    color: #fff;
+    font-size: 17px;
+}
+
+/*/////////////////// footer-top /////////// */
+
+.page-footer .fab {
+    color: #fff;
+     font-size: 18px;
+     transition: all 0.4s;
+    margin: 15px;
+    
+}
+
+.page-footer .fab:hover{
+    /* transform: translateY(-20%); */
+  transform: scale(2);
+  cursor: pointer;
+}
+
+.gal {
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+      }	
+      
+
+	.gal img{ width: 100%; padding: 7px 0;}
+@media (max-width: 500px) {
+		
+		.gal {
+	-webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+	  
+	
+	}
+		
+}
+
+.footer-contact-section .fas{
+   transition: transform 0.6s ease;
+}
+
+.footer-contact-section .fas:hover{
+    transform: rotate(360deg);
+ }
+
+/* ********* footer copyright ********** */
+.footer-copyright{
+
+    width: 100% !important;
+    background: #1D2124;
+    color: #fff;
+    background-image: linear-gradient(125deg, #231557, #44107A, #FF1361, #fda34b, #FFF800);
+    background-size: 400%;
+    animation: footer-down 15s infinite;
+    /* clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0 80%, 0 0); */
+}
+
+
+/* ///// background footer-top color animation////// */
+
+@keyframes footer-down{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%; 
+    }
+    100%{
+        background-position: 0% 50%; 
+    }
+}
+
+/* ///// background footer-top color animation////// */
+
+
+.footer-copyright a{
+    line-height: 1.5;
+    text-decoration: none !important;
+    /* text-shadow: 0 0 10px 10px red; */
+    color: #fff !important;
+}
+
+.footer-copyright p{
+    margin: 0;
+    font-weight: 600;
+  animation-name: copyright;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+    
+}
+
+@keyframes copyright{
+    0%
+    {transform: rotateY(360deg);}
+
+    100%
+    {transform: rotateY(0deg);}
+}
+
+/* ********* footer copyright ********** */
+
+   
