@@ -569,6 +569,12 @@ margin-bottom: 120px;
     background: #fff;
 }
 
+.contact-section form textarea{
+    width: 100%;
+    height: 80px;
+    padding: 5px;
+}
+
 @media (max-width: 592px){
     .contact-section h5{
         font-size: 18px;
