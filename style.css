@@ -111,6 +111,10 @@ transform: rotate(-135deg);
     /* background-color: #1CB5E0; */
 }
 
+a.nav-link {
+    color: #fff !important;
+}
+
 .nav-link:before{
     content: "";
     position: absolute;
@@ -247,6 +251,11 @@ a.logo-text{
         margin-left: 53px;
     }
 
+    .site-logo {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
     .logo-text{
         font-size: 16px !important;
     }
@@ -266,6 +275,21 @@ a.logo-text{
      
     }
     }
+
+
+    @media(max-width: 350px){
+        .middle-header .btn-middle-header{
+            padding: 11px 24px;
+            font-size: 14px;
+        }
+    }
+
+    @media(max-width: 350px){
+        .middle-header .btn-middle-header{
+            padding: 9px 13px !important;
+        }
+    }
+    
 /* navbar fit to for mobile screen */
 
 
@@ -285,7 +309,8 @@ a.logo-text{
 }
 
 #menuarea.cus-nav{
-    background: #231557;
+    background: #000;
+    opacity: 0.95;
     z-index: 999;
 }
 
@@ -305,7 +330,8 @@ a.logo-text{
 
 @media screen and (max-width: 992px) {
     .navbar-collapse{
-        background: #231557;
+        background: #000;
+        opacity: 0.95;
         z-index: 1;
         text-align: center;
         
@@ -351,10 +377,10 @@ a.logo-text{
 
 .btn-middle-header{
     border: 2px solid #fff;
-    padding: 15px 45px;
+    padding: 14px 38px;
     color: #fff;
     font-weight: bold;
-    transition: 0.7s ease;
+    transition: 0.5s;
     border-radius: 30px;
     
 }
@@ -532,6 +558,7 @@ margin-bottom: 120px;
 }
 
 .contact-section .center-position{
+    width: 85%;
     position: absolute;
     /* background: red; */
     top: 50%;
@@ -559,7 +586,7 @@ margin-bottom: 120px;
 
 .contact-section .contact-now {
     border: 2px solid #fff;
-    padding: 15px 42px;
+    padding: 14px 36px;
     border-radius: 25px;
     transition: all 0.4s;
    }
@@ -588,6 +615,21 @@ margin-bottom: 120px;
        
        }
 }
+
+@media (max-width: 480px){
+    .contact-section .contact-now{
+        padding: 12px 28px;
+    }    
+}
+
+@media (max-width: 320px){
+    .contact-section .contact-now{
+        padding: 11px 24px;
+    }    
+}
+
+
+
 
 /* ////////////// Contact me end ///////////////// */
 
