@@ -310,7 +310,7 @@ a.logo-text{
 
 #menuarea.cus-nav{
     background: #000;
-    opacity: 0.95;
+    opacity: 0.95 !important;
     z-index: 999;
 }
 
@@ -465,6 +465,47 @@ a.logo-text{
 }
 
 
+/* now add */
+figure {
+    position: relative;
+    background: url(images/Pritam_bag.jpg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    margin: 0 auto !important;
+}
+
+
+figure::before {
+    position: absolute;
+    content: "";
+    background-image: linear-gradient(125deg, #231557, #44107A, #FF1361,#fda34b, #FFF800);
+    top: -6px;
+    left: -6px;
+    bottom: -6px;
+    right: -6px;
+    /* position: absolute; */
+    z-index:-1;
+    border-radius: 50%;
+}
+
+@media(max-width: 992px){
+    figure{
+        margin-top: 82px !important;
+    } 
+}
+
+@media(max-width: 480px){
+    figure{
+        width: 140px;
+        height: 140px;
+    } 
+}
+/* now add */
+
 .about-me-content span{
 display: flex;
 justify-content: center;
@@ -523,9 +564,7 @@ margin-bottom: 120px;
     }
 
 }
-   
-
-/*//////////////////////// end what i can do ///////////////////////*/
+   /*//////////////////////// end what i can do ///////////////////////*/
 
 
 /* ////////////// Contact me start ///////////////// */
@@ -628,9 +667,6 @@ margin-bottom: 120px;
     }    
 }
 
-
-
-
 /* ////////////// Contact me end ///////////////// */
 
 /*//////////////////////// start portfolio section ///////////////////////*/
@@ -638,8 +674,7 @@ margin-bottom: 120px;
 .portfolio-margintop{
        margin-top: 85px;
     }
-    
-    
+       
 .gallery {
 -webkit-column-count: 3;
 -moz-column-count: 3;
@@ -658,8 +693,6 @@ column-count: 1;
 -moz-column-width: 100%;
 column-width: 100%;
 }
-
-
 
 .gallery .img-width{
     width: 100%;
@@ -746,23 +779,12 @@ img{
 /*//////////////////////// end portfolio section ///////////////////////*/
 
 
-/* slider */
-/* .slider{
-    margin: 80px 0 80px 0;
-
-} */
-
-/* slider */
-
-
 /*/////////////////// footer-top /////////// */
 
 .footer-top{
     background: #000046;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #1CB5E0,#000046 );  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #1CB5E0, #000046 ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7*/
-
-
 }
 
 .bg-footer-amimation{
@@ -772,8 +794,6 @@ img{
     animation: footer-animate 15s infinite !important;
     /* clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0 80%, 0 0); */
 }
-
-
 
 /* ///// background footer-top color animation////// */
 
@@ -826,11 +846,8 @@ img{
 	-webkit-column-count: 1; /* Chrome, Safari, Opera */
     -moz-column-count: 1; /* Firefox */
     column-count: 1;
-	  
-	
+	  }
 	}
-		
-}
 
 .footer-contact-section .fas{
    transition: transform 0.6s ease;
