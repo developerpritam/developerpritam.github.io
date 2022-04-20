@@ -1,6 +1,3 @@
-html{
-    scroll-behavior: smooth;
-}
 
 *{
     margin: 0;
@@ -10,6 +7,11 @@ html{
 font-family: 'Overpass', sans-serif;
 }
 
+html{
+    overflow-y: scroll;
+    scroll-behavior: smooth !important;  
+}
+
 /* /////////////// loading animation //////////////// */
 #loading{
     position: fixed;
@@ -17,6 +19,7 @@ font-family: 'Overpass', sans-serif;
     height: 100vh;
     background: #fff url('images/Infinity-1s-200px.gif') no-repeat center;
     z-index: 99999;
+    background-size: 10rem 10rem;
     }
 /* /////////////// loading animation //////////////// */
 
@@ -360,6 +363,7 @@ a.logo-text{
 
 .middle-header h1{
     animation-duration: 1.4s;
+    text-transform: uppercase;
 }
 
 .middle-header span{
@@ -445,6 +449,10 @@ a.logo-text{
 
 /* //////////////////////progress bar end ////////////////////////// */
 
+#about-me .row{
+align-items: center;
+}
+
 .my-skill{
     margin-top: 100px;
 }
@@ -468,18 +476,18 @@ a.logo-text{
 /* now add */
 figure {
     position: relative;
-    background: url(images/Pritam_bag.jpg);
+    background: url(images/pritam.png);
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    width: 170px;
-    height: 170px;
+    width: 176px;
+    height: 176px;
     border-radius: 50%;
     margin: 0 auto !important;
 }
 
 
-figure::before {
+/* figure::before {
     position: absolute;
     content: "";
     background-image: linear-gradient(125deg, #231557, #44107A, #FF1361,#fda34b, #FFF800);
@@ -487,10 +495,9 @@ figure::before {
     left: -6px;
     bottom: -6px;
     right: -6px;
-    /* position: absolute; */
     z-index:-1;
     border-radius: 50%;
-}
+} */
 
 @media(max-width: 992px){
     figure{
@@ -531,13 +538,19 @@ justify-content: center;
 margin-bottom: 120px;
 }
 
+#services-smooth-scroll h3{
+    text-transform: uppercase;
+    font-size: 24px;
+}
 
 .card{
-  
  padding: 20px;
  transition: all 0.5s;
  box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+ }
 
+ .card p{
+     line-height: 1.6;
  }
 
 .card:hover{
@@ -605,6 +618,10 @@ margin-bottom: 120px;
     transform: translate(-50%,-50%);
 }
 
+.center-position h4{
+    text-transform: uppercase;
+    margin-bottom: 35px !important;
+}
 
 
 /* //////////////////// popup form massage area /////////////////////// */
@@ -619,8 +636,8 @@ margin-bottom: 120px;
 /* //////////////////// popup form massage area /////////////////////// */
 
 .contact-section h5{
-    margin-bottom: 20px;
-   
+    margin-bottom: 36px !important;
+   text-transform: uppercase;
 }
 
 .contact-section .contact-now {
@@ -628,6 +645,7 @@ margin-bottom: 120px;
     padding: 14px 36px;
     border-radius: 25px;
     transition: all 0.4s;
+    font-weight: 600;
    }
 
 .contact-now:hover{
