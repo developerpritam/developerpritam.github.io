@@ -155,10 +155,10 @@ a.nav-link {
 
 
 @media (max-width: 991px){
-.navbar-nav{
+/* .navbar-nav{
     padding: 15px;
    
-}
+} */
 
 
 .navbar-nav .nav-item{
@@ -173,10 +173,13 @@ a.nav-link {
 header{
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(125deg, #231557, #44107A, #FF1361,#fda34b, #FFF800);
+    background-image: linear-gradient(125deg, #333399,#FF00CC, #333399);
     background-size: 400%;
-    animation: bganimation 15s infinite;
-    /* clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0 80%, 0 0); */
+    animation: bganimation 15s ease infinite;
+    /* clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0 80%, 0 0);
+    position: absolute; */
+
+    /* z-index: -1; */
 }
 
 /* ///// background header color animation////// */
@@ -480,7 +483,6 @@ figure {
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    border: 5px solid green;
     width: 176px;
     height: 176px;
     border-radius: 50%;
@@ -934,4 +936,18 @@ img{
 
 /* ********* footer copyright ********** */
 
-   
+  
+/* @media(prefers-color-scheme: dark){
+    html body{
+        background-color: #121212;
+        color: #fff;
+    }
+
+.row .card-deck h3, .card-deck p{
+        color: #000 !important;
+    }
+
+    h1,h2,h3,h4,h5,h6,p,span,a,li{
+        color: #fff !important;
+    }
+} */
