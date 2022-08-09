@@ -480,6 +480,7 @@ figure {
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
+    border: 5px solid green;
     width: 176px;
     height: 176px;
     border-radius: 50%;
@@ -642,7 +643,7 @@ margin-bottom: 120px;
 
 .contact-section .contact-now {
     border: 2px solid #fff;
-    padding: 14px 36px;
+    padding: 13px 24px;
     border-radius: 25px;
     transition: all 0.4s;
     font-weight: 600;
